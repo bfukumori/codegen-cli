@@ -10,7 +10,16 @@
   "scripts": {
     "start": "SET \"NODE_ENV=dev\" && node src/index.js skeleton -c product -c person -c colors",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js -i --watchAll --config jest.config.js",
-    "test:cov": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.js --coverage"
+    "test:cov": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.js --coverage",
+    "test:unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.unit.config.js",
+    "test:int": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.int.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bfukumori/codegen-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bfukumori/codegen-cli/issues"
   },
   "keywords": [
     "node",
