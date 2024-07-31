@@ -1,0 +1,28 @@
+{
+  "name": "@bfukumori/codegen",
+  "description": "CLI to generate code from templates",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "codegen": "./src/index.js"
+  },
+  "scripts": {
+    "start": "SET \"NODE_ENV=dev\" && node src/index.js skeleton -c product -c person -c colors",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js -i --watchAll --config jest.config.js",
+    "test:cov": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.config.js --coverage"
+  },
+  "keywords": [
+    "node",
+    "cli",
+    "codegen"
+  ],
+  "author": "bfukumori",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}
