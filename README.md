@@ -1,17 +1,51 @@
-# Task Checklist
+# Codegen CLI
 
-- [x] creates `src` main folder if it not exists
+A command-line tool to generate an initial skeleton for a project with specified components and layers.
 
-- [x] creates `repository` layer
+## Installation
 
-- [x] creates `service` layer with `repository` as dependency
+You can install the package globally using npm:
 
-- [x] creates `factory` layer with `service` and `repository` returning its instances
+```bash
+npm install -g @bfukumori/codegen
+```
 
-- [x] can create multiples domains with a single comand
+## Usage
 
-- [x] saves files as `camelCase` and classes as `PascalCase`
+### Command
 
-- [x] reaches **100% test coverage**
+```bash
+skeleton
 
-- [x] integration tests should validate files on disk as a valid JS class
+# You can use --help flag for more information
+```
+
+### Options
+
+- `--component-name`, `-c`: The name(s) of the component(s) to generate. This option is required and accepts multiple values.
+- `--default-folder`, `-f`: The default folder where the project skeleton will be generated. The default value is `src`.
+
+## Directory Structure
+
+```bash
+skeleton -c product -c person -c colors
+```
+
+The generated directory and file structure will be similar to:
+
+```plaintext
+.
+├── src
+│   ├── factory
+│   │   ├── productFactory.js
+│   │   ├── personFactory.js
+│   │   └── colorsFactory.js
+│   ├── repository
+│   │   ├── productRepository.js
+│   │   ├── personRepository.js
+│   │   └── colorsRepository.js
+│   └── service
+│       ├── productService.js
+│       ├── personService.js
+│       └── colorsService.js
+```
